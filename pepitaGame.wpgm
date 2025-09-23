@@ -10,8 +10,8 @@ program pepitaGame {
 	
 	//VISUALS 
 	game.addVisual(silvestre)
-	game.addVisualCharacter(pepita)
-	//game.addVisual(pepita)
+	//game.addVisualCharacter(pepita)
+	game.addVisual(pepita)
 	
 	//CAPTURA DE TECLADO 
 	keyboard.up().onPressDo({pepita.volarArriba()})

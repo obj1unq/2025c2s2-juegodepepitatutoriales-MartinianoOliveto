@@ -17,12 +17,6 @@ object pepita {
 	}
 	method volar(kms) {
 		energia = energia - 9 - kms 
-		if(not self.tieneEnergia() && energia.between(0,9)){
-			game.stop() 
-		}else if(not self.tieneEnergia() && energia < 0){
-			energia = 0
-			game.stop()
-		}
 	}
 	method energia() {
 		return energia
@@ -34,14 +28,14 @@ object pepita {
 
 	//validar cada movimiento
 	method volarDerecha(){
-		if(self.tieneEnergia()){
+		if(self.tieneEnergia() && position.x() ){
 			self.volar(1)
 			position = position.right(1)
 			//return position.right(1)
 		}
 	}
 	method volarIzquierda(){
-		if(self.tieneEnergia()){
+		if(self.tieneEnergia() && position.x() ){
 			self.volar(1)
 			position = position.left(1)
 			//return position.left(1)	
@@ -50,7 +44,7 @@ object pepita {
 		}*/
 	}
 	method volarArriba(){
-		if(self.tieneEnergia()){
+		if(self.tieneEnergia() && position.y()  ){
 			self.volar(1)
 			position = position.up(1)
 			//return position.up(1)
@@ -59,7 +53,7 @@ object pepita {
 		}*/
 	}
 	method volarAbajo(){
-		if(self.tieneEnergia()){
+		if(self.tieneEnergia() && position.y() ){
 			self.volar(1)
 			position = position.down(1)
 			//return position.down(1)
