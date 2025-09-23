@@ -17,7 +17,7 @@ object silvestre{
         if(pepita.position().x() >= 3){
             return game.at(pepita.position().x(), 0)
         }
-       return game.at(4, 0)
+       return game.at(3, 0)
     }
 
 }
