@@ -15,9 +15,14 @@ program pepitaGame {
 	
 	//CAPTURA DE TECLADO 
 	keyboard.up().onPressDo({pepita.volarArriba()})
+
 	keyboard.down().onPressDo({pepita.volarAbajo()})
 	keyboard.right().onPressDo({pepita.volarDerecha()})
 	keyboard.left().onPressDo({pepita.volarIzquierda()})
 
+	game.showAttributes(pepita)
+
 	game.start()
+
+	
 }
