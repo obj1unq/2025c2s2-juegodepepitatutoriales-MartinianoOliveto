@@ -1,6 +1,6 @@
 
 object pepita {
-	var energia = 100
+	var energia = 500
 	var property position = game.center()
 
 	method image(){
@@ -28,14 +28,14 @@ object pepita {
 
 	//validar cada movimiento
 	method volarDerecha(){
-		if(self.tieneEnergia() && position.x() ){
+		if(self.tieneEnergia() && position.x() < game.width() - 1){
 			self.volar(1)
 			position = position.right(1)
 			//return position.right(1)
 		}
 	}
 	method volarIzquierda(){
-		if(self.tieneEnergia() && position.x() ){
+		if(self.tieneEnergia() && position.x() > 0){
 			self.volar(1)
 			position = position.left(1)
 			//return position.left(1)	
@@ -44,7 +44,7 @@ object pepita {
 		}*/
 	}
 	method volarArriba(){
-		if(self.tieneEnergia() && position.y()  ){
+		if(self.tieneEnergia() && position.y() < game.height() - 1){
 			self.volar(1)
 			position = position.up(1)
 			//return position.up(1)
@@ -53,7 +53,7 @@ object pepita {
 		}*/
 	}
 	method volarAbajo(){
-		if(self.tieneEnergia() && position.y() ){
+		if(self.tieneEnergia() && position.y() > 0){
 			self.volar(1)
 			position = position.down(1)
 			//return position.down(1)
