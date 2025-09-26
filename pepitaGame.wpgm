@@ -1,3 +1,4 @@
+import comidas.*
 import wollok.game.*
 import pepita.*
 import silvestre.*
@@ -13,6 +14,9 @@ program pepitaGame {
 	game.addVisual(silvestre)
 	game.addVisual(pepita)
 	game.addVisual(muro)
+	game.addVisual(alpiste)
+	game.addVisual(manzana)
+	game.addVisual(nido)
 	
 	//KEYBOARD 
 	keyboard.up().onPressDo({pepita.volarArriba()})
@@ -22,6 +26,13 @@ program pepitaGame {
 
 	//ONTICK EVENTS 
 	//game.onTick(800, "gravedad", {pepita.gravedad()})
+
+	//COLISIONES 
+	game.whenCollideDo(pepita,{objeto =>
+		game.say(pepita, "Perdi")
+	})
+	
+	
 
 	game.start()
 
