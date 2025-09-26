@@ -21,7 +21,7 @@ program pepitaGame {
 	keyboard.left().onPressDo({pepita.volarIzquierda()})
 
 	//ONTICK EVENTS 
-	game.onTick(800, "gravedad", {pepita.gravedad()})
+	//game.onTick(800, "gravedad", {pepita.gravedad()})
 
 	game.start()
 

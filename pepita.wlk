@@ -1,4 +1,5 @@
 import silvestre.*
+import extras.*
 object pepita {
 	var energia = 500
 	var property position = game.center()
@@ -59,7 +60,10 @@ object pepita {
 	}
 	method gravedad(){
 		position = game.at(position.x(), position.y() - 1)
-		//return position
+		
+	}
+	method hayMuroEn(_position){
+		return position.muro() == position 
 	}
 }
 
