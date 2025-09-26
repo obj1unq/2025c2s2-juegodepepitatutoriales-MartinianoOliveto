@@ -1,15 +1,17 @@
-
+import silvestre.*
 object pepita {
 	var energia = 500
 	var property position = game.center()
+	var property estadoPepita = "pepita.png"
 
 	method image(){
-		if(not self.tieneEnergia()){
-			return "pepita-gris.png"
+		if(not self.tieneEnergia() || self.fueAtrapada()){
+			energia = 0 
+			estadoPepita = "pepita-gris.png"
 		}else{
-			return "pepita.png"
+			estadoPepita = "pepita.png"
 		}
-		
+		return estadoPepita
 	}
 
 	method comer(comida) {
@@ -60,6 +62,9 @@ object pepita {
 		}/*else{
 			return position
 		}*/
+	}
+	method fueAtrapada(){
+		return position == silvestre.position()
 	}
 }
 
