@@ -8,6 +8,7 @@ object pepita {
 		if(not self.tieneEnergia() || self.fueAtrapada()){
 			energia = 0 
 			estadoPepita = "pepita-gris.png"
+			
 		}else{
 			estadoPepita = "pepita.png"
 		}
@@ -33,38 +34,32 @@ object pepita {
 		if(self.tieneEnergia() && position.x() < game.width() - 1){
 			self.volar(1)
 			position = position.right(1)
-			//return position.right(1)
 		}
 	}
 	method volarIzquierda(){
 		if(self.tieneEnergia() && position.x() > 0){
 			self.volar(1)
-			position = position.left(1)
-			//return position.left(1)	
-		}/*else{
-			//return position 
-		}*/
+			position = position.left(1)	
+		}
 	}
 	method volarArriba(){
 		if(self.tieneEnergia() && position.y() < game.height() - 1){
 			self.volar(1)
 			position = position.up(1)
-			//return position.up(1)
-		}/*else{
-			return position 
-		}*/
+		}
 	}
 	method volarAbajo(){
 		if(self.tieneEnergia() && position.y() > 0){
 			self.volar(1)
 			position = position.down(1)
-			//return position.down(1)
-		}/*else{
-			return position
-		}*/
+		}
 	}
 	method fueAtrapada(){
 		return position == silvestre.position()
+	}
+	method gravedad(){
+		position = game.at(position.x(), position.y() - 1)
+		//return position
 	}
 }
 

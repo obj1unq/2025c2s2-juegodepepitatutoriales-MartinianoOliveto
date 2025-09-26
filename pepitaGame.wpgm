@@ -1,6 +1,7 @@
 import wollok.game.*
 import pepita.*
 import silvestre.*
+import extras.*
 
 program pepitaGame {
 	game.title("Pepita") 	//Valor por defecto "Wollok Game"
@@ -10,19 +11,18 @@ program pepitaGame {
 	
 	//VISUALS 
 	game.addVisual(silvestre)
-	//game.addVisualCharacter(pepita)
 	game.addVisual(pepita)
+	game.addVisual(muro)
 	
-	//CAPTURA DE TECLADO 
+	//KEYBOARD 
 	keyboard.up().onPressDo({pepita.volarArriba()})
-
 	keyboard.down().onPressDo({pepita.volarAbajo()})
 	keyboard.right().onPressDo({pepita.volarDerecha()})
 	keyboard.left().onPressDo({pepita.volarIzquierda()})
 
-	game.showAttributes(pepita)
+	//ONTICK EVENTS 
+	game.onTick(800, "gravedad", {pepita.gravedad()})
 
 	game.start()
 
-	//////////	
 }
