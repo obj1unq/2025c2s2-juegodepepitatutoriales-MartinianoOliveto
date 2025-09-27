@@ -14,7 +14,7 @@ object alpiste{
     }
 }
 object manzana{
-    var property position = game.at(3,7) 
+    var property position = game.at(3,5) 
     const property energiaQueOtorga = 20  
 
     method image(){
@@ -22,10 +22,13 @@ object manzana{
     }
 }
 object nido{
-    var property position = game.at(9,9) 
+    var property position = game.at(4,9) 
 
     method image(){
         return "nido.png"
+    }
+    method mensaje(){
+        return "Gane"
     }
 }
 

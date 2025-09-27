@@ -65,6 +65,16 @@ object pepita {
 	method hayMuroEn(_position){
 		return position.muro() == position 
 	}
+	method ganadora(){
+		estadoPepita = "pepita-grande.png"
+	}
+	method mensajeDerrota(){
+		return "Perdi"
+	}
+	method mensajeVictoria(){
+		return "Gane"
+	}
+
 }
 
 

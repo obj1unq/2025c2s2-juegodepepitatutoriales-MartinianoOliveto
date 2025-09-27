@@ -19,6 +19,9 @@ object silvestre{
         }
        return game.at(3, 0)
     }
+    method mensaje(){
+        return "Perdi"
+    }
 }
 
 
