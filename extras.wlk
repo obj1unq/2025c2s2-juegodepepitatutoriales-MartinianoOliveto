@@ -6,19 +6,25 @@ object muro{
     }
 }
 object alpiste{
-    var property position = game.at(3,8)
-    const property energiaQueOtorga = 10 
-    
+    //var  position = game.at(0,0)
+   // const property energiaQueOtorga = 10 
+    method position() = game.at(3,3)
     method image(){
-        return "alpiste.png"
+        return "pepona.png"
     }
+}
+
+object alpiste2{
+      var property position = game.at(3,3)
+
+      method image() = "alpiste.png"
 }
 object manzana{
     var property position = game.at(3,5) 
-    const property energiaQueOtorga = 20  
+    //const property energiaQueOtorga = 20  
 
     method image(){
-        return "manzana.png"
+        return "pepita-gris.png"
     }
 }
 object nido{

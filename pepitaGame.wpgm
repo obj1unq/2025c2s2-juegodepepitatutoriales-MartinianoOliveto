@@ -13,7 +13,7 @@ program pepitaGame {
 	//VISUALS 
 	game.addVisual(silvestre)
 	game.addVisual(muro)
-	//game.addVisual(alpiste) //Bug
+	game.addVisual(alpiste2) //Bug
 	//game.addVisual(manzana) //Bug
 	game.addVisual(nido)
 	game.addVisual(pepita)
@@ -28,9 +28,11 @@ program pepitaGame {
 	//game.onTick(800, "gravedad", {pepita.gravedad()})
 
 	//COLISIONES
-	game.whenCollideDo(pepita, {elemento => 
-		game.say(pepita,elemento.mensaje())
-		game.stop()
+	game.whenCollideDo(nido, {pepita => 
+		game.say(pepita,pepita.mensajeVictoria())
+	})
+	game.whenCollideDo(silvestre, {pepita =>
+		game.say(pepita, pepita.mensajeDerrota())
 	})
 	
 	
